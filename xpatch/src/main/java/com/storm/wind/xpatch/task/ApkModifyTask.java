@@ -110,8 +110,9 @@ public class ApkModifyTask implements Runnable {
         for (int i = 0; i < dexFileCount; i++) {
             if (i == 0) {
                 list.add("classes.dex");
+                list.add("classes2.dex");
             } else {
-                list.add("classes" + (i + 1) + ".dex");
+                list.add("classes" + (i + 2) + ".dex");
             }
         }
         return list;

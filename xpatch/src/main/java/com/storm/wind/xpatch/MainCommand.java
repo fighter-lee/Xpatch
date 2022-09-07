@@ -4,6 +4,7 @@ import com.storm.wind.xpatch.base.BaseCommand;
 import com.storm.wind.xpatch.task.ApkModifyTask;
 import com.storm.wind.xpatch.task.BuildAndSignApkTask;
 import com.storm.wind.xpatch.task.SaveApkSignatureTask;
+import com.storm.wind.xpatch.task.SaveAssetTask;
 import com.storm.wind.xpatch.task.SaveOriginalApkTask;
 import com.storm.wind.xpatch.task.SaveOriginalApplicationNameTask;
 import com.storm.wind.xpatch.task.SoAndDexCopyTask;
@@ -88,7 +89,9 @@ public class MainCommand extends BaseCommand {
     private List<Runnable> mXpatchTasks = new ArrayList<>();
 
     public static void main(String... args) {
+
         new MainCommand().doMain(args);
+//        new MainCommand().doMain("/Users/ctrip/Documents/ctrip/workspace/Xpatch-2/xpatch/temp/app-debug.apk");
     }
 
     @Override
@@ -209,6 +212,8 @@ public class MainCommand extends BaseCommand {
         if (isNotEmpty(applicationName)) {
             mXpatchTasks.add(new SaveOriginalApplicationNameTask(applicationName, unzipApkFilePath));
         }
+
+        mXpatchTasks.add(new SaveAssetTask(unzipApkFilePath));
 
         //  modify the apk dex file to make xposed can run in it
         if (dexModificationMode && isNotEmpty(applicationName)) {

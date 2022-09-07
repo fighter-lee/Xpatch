@@ -4,12 +4,25 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url "http://maven.release.ctripcorp.com/nexus/content/groups/public" }
+        maven { url "http://maven.wireless.release.ctripcorp.com/nexus/repository/public" }
+        maven { url "http://maven.wireless.release.ctripcorp.com/nexus/content/groups/public" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.1'
+        classpath "com.android.tools.build:gradle:4.2.1"
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven { url "http://maven.release.ctripcorp.com/nexus/content/groups/public" }
+        maven { url "http://maven.wireless.release.ctripcorp.com/nexus/content/groups/public" }
+    }
 }

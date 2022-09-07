@@ -2,11 +2,14 @@ package com.storm.wind.xposed;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 //import android.support.v4.app.ActivityCompat;
 import android.view.View;
+
+import com.ctrip.ztthemis.activity.ZTThemisActivity2;
 
 public class MainTestActivity extends Activity {
 
@@ -31,6 +34,8 @@ public class MainTestActivity extends Activity {
     }
 
     public void onClick(View view) {
+
+        startActivity(new Intent(this, ZTThemisActivity2.class));
     }
 
 }

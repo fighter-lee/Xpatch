@@ -1,0 +1,39 @@
+{
+  "api": [
+    {
+      "className": "android.telephony.TelephonyManager",
+      "method": "*",
+      "priority": "4"
+    },
+    {
+      "className": "android.hardware.SensorManager",
+      "method": "*",
+      "priority": "4"
+    },
+    {
+      "className": "android.app.ApplicationPackageManager",
+      "method": "getPackageInfoAsUser",
+      "priority": "5"
+    },
+    {
+      "className": "android.app.ApplicationPackageManager",
+      "method": "getInstalledPackages",
+      "priority": "5"
+    },
+    {
+      "className": "android.app.ApplicationPackageManager",
+      "method": "getInstalledPackagesAsUser",
+      "priority": "5"
+    },
+    {
+      "className": "androidx.core.app.ActivityCompat",
+      "method": "requestPermissions",
+      "priority": "5"
+    },
+    {
+      "className": "android.content.ContentResolver",
+      "method": "*",
+      "priority": "5"
+    }
+  ]
+}

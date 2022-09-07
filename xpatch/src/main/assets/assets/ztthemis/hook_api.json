@@ -1,0 +1,200 @@
+{
+  "api": [
+    {
+      "className": "android.telephony.TelephonyManager",
+      "method": [
+        {
+          "name": "getLine1Number"
+        },
+        {
+          "name": "listen",
+          "params": "android.telephony.PhoneStateListener,int"
+        },
+        {
+          "name": "getDeviceId"
+        },
+        {
+          "name": "msgetCallState"
+        },
+        {
+          "name": "getPhoneCount",
+          "sdkVersion": ">22"
+        },
+        {
+          "name": "getNeighboringCellInfo",
+          "sdkVersion": "<23"
+        },
+        {
+          "name": "getAllCellInfo"
+        },
+        {
+          "name": "getCellLocation"
+        },
+        {
+          "name": "getSubscriberId"
+        },
+        {
+          "name": "getMeid",
+          "sdkVersion": ">25",
+          "params": "int"
+        },
+        {
+          "name": "getCarrierConfig",
+          "sdkVersion": ">25"
+        },
+        {
+          "name": "getImei",
+          "sdkVersion": ">25",
+          "params": "int"
+        },
+        {
+          "name": "getForbiddenPlmns",
+          "sdkVersion": ">25"
+        },
+        {
+          "name": "getServiceState",
+          "sdkVersion": ">25"
+        },
+        {
+          "name": "getVisualVoicemailPackageName",
+          "sdkVersion": ">25"
+        },
+        {
+          "name": "getVoiceMailNumber"
+        },
+        {
+          "name": "getDataNetworkType"
+        },
+        {
+          "name": "getDeviceSoftwareVersion"
+        },
+        {
+          "name": "getGroupIdLevel1"
+        },
+        {
+          "name": "getNetworkType"
+        },
+        {
+          "name": "getVoiceMailAlphaTag"
+        },
+        {
+          "name": "getVoiceNetworkType"
+        },
+        {
+          "name": "getSimSerialNumber"
+        },
+        {
+          "name": "getDeviceId",
+          "params": "int"
+        },
+        {
+          "name": "isDataRoamingEnabled",
+          "sdkVersion": ">28"
+        },
+        {
+          "name": "getEmergencyNumberList",
+          "sdkVersion": ">28"
+        },
+        {
+          "name": "getPreferredOpportunisticDataSubscription",
+          "sdkVersion": ">28"
+        },
+        {
+          "name": "isMultiSimSupported",
+          "sdkVersion": ">28"
+        },
+        {
+          "name": "getEmergencyNumberList",
+          "sdkVersion": ">28",
+          "params": "int"
+        },
+        {
+          "name": "sendVisualVoicemailSms",
+          "sdkVersion": ">28",
+          "params": "String,int,String,android.app.PendingIntent"
+        },
+        {
+          "name": "sendUssdRequest",
+          "sdkVersion": ">25",
+          "params": "String,android.telephony.TelephonyManager.UssdResponseCallback,android.os.Handler"
+        },
+        {
+          "name": "isManualNetworkSelectionAllowed",
+          "sdkVersion": ">29"
+        },
+        {
+          "name": "getNetworkSelectionMode",
+          "sdkVersion": ">29"
+        },
+        {
+          "name": "isModemEnabledForSlot",
+          "sdkVersion": ">29"
+        },
+        {
+          "name": "isModemEnabledForSlot",
+          "sdkVersion": ">29"
+        },
+        {
+          "name": "getSubscriptionId",
+          "sdkVersion": ">29",
+          "params": "android.telecom.PhoneAccountHandle"
+        },
+        {
+          "name": "requestNetworkScan",
+          "sdkVersion": ">27",
+          "params": "android.telephony.NetworkScanRequest,java.util.concurrent.Executor,android.telephony.TelephonyScanManager.NetworkScanCallback"
+        },
+        {
+          "name": "getSubscriptionId",
+          "sdkVersion": ">27"
+        }
+      ]
+    },
+    {
+      "className": "android.telephony.CellInfo",
+      "method": [
+        {
+          "name": "isRegistered"
+        }
+      ]
+    },
+    {
+      "className": "androidx.core.app.ActivityCompat",
+      "method": [
+        {
+          "name": "requestPermissions",
+          "params": "android.app.Activity,String[],int"
+        }
+      ]
+    },
+    {
+      "className": "android.app.ApplicationPackageManager",
+      "method": [
+        {
+          "name": "getInstalledPackages",
+          "params": "int"
+        },
+        {
+          "name": "getInstalledApplications",
+          "params": "int"
+        },
+        {
+          "name": "getInstalledPackagesAsUser",
+          "params": "int,int"
+        },
+        {
+          "name": "getInstalledApplicationsAsUser",
+          "params": "int,int"
+        },
+        {
+          "name": "queryIntentActivities",
+          "params": "android.content.Intent,int"
+        },
+        {
+          "name": "queryIntentActivities",
+          "params": "String,int,int"
+        }
+      ]
+    }
+  ]
+}

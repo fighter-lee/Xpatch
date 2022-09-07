@@ -121,10 +121,14 @@ public class SoAndDexCopyTask implements Runnable {
         String dexAssetPath;
         if (useWhaleHookFramework) {
             dexAssetPath = "assets/dex/whale/classes-1.0.dex";
+            FileUtils.copyFileFromJar(dexAssetPath, unzipApkFilePath + copiedDexFileName);
         } else {
             dexAssetPath = "assets/dex/sandhook/classes.dex";
+            String dexAssetPath2 = "assets/dex/sandhook/classes2.dex";
+            String copiedDexFileName2 = "classes" + (dexFileCount + 2) + ".dex";
+            FileUtils.copyFileFromJar(dexAssetPath, unzipApkFilePath + copiedDexFileName);
+            FileUtils.copyFileFromJar(dexAssetPath2, unzipApkFilePath + copiedDexFileName2);
         }
-        FileUtils.copyFileFromJar(dexAssetPath, unzipApkFilePath + copiedDexFileName);
     }
 
     private String fullLibPath(String libPath) {

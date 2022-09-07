@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
@@ -404,6 +405,46 @@ public class FileUtils {
             }
         } catch (IOException io) {
             io.printStackTrace();
+        }
+    }
+
+    public static void copyDir(String sourcePath, String newPath) {
+        try {
+            (new File(newPath)).mkdirs();
+            // 与mkdir()都创建文件夹 ，mkdirs()如果父文件夹不存在也会创建
+            File fileList = new File(sourcePath);
+            String[] strName = fileList.list();
+            File temp = null;//游标
+            for (int i = 0; i < strName.length; i++) {
+                // 如果源文件路径以分隔符File.separator /或者\结尾那就sourcePath
+                if (sourcePath.endsWith(File.separator)) {
+                    temp = new File(sourcePath + strName[i]);
+                } else {
+                    temp = new File(sourcePath + File.separator + strName[i]);
+                }
+                if (temp.isFile()) {
+                    // 如果游标遇到文件
+                    FileInputStream in = new FileInputStream(temp);
+                    // 复制且改名
+                    File file = new File(newPath + "/" + temp.getName().toString());
+                    FileOutputStream out = new FileOutputStream(file);
+                    byte[] buffer = new byte[1024 * 8];
+                    int length;
+                    while ((length = in.read(buffer)) != -1) {
+
+                        out.write(buffer, 0, length);
+                    }
+                    out.flush();
+                    out.close();
+                    in.close();
+                }
+                // 如果游标遇到文件夹
+                if (temp.isDirectory()) {
+                    copyDir(sourcePath + "/" + strName[i], newPath + "/" + strName[i]);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("文件夹复制失败!");
         }
     }
 }
