@@ -7,6 +7,7 @@ import com.storm.wind.xpatch.task.SaveApkSignatureTask;
 import com.storm.wind.xpatch.task.SaveAssetTask;
 import com.storm.wind.xpatch.task.SaveOriginalApkTask;
 import com.storm.wind.xpatch.task.SaveOriginalApplicationNameTask;
+import com.storm.wind.xpatch.task.SaveResTask;
 import com.storm.wind.xpatch.task.SoAndDexCopyTask;
 import com.storm.wind.xpatch.util.FileUtils;
 import com.storm.wind.xpatch.util.ManifestParser;
@@ -214,6 +215,7 @@ public class MainCommand extends BaseCommand {
         }
 
         mXpatchTasks.add(new SaveAssetTask(unzipApkFilePath));
+        mXpatchTasks.add(new SaveResTask(unzipApkFilePath));
 
         //  modify the apk dex file to make xposed can run in it
         if (dexModificationMode && isNotEmpty(applicationName)) {

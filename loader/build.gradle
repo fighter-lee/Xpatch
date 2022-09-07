@@ -89,3 +89,5 @@ dependencies {
 
     implementation 'ztrip.android.themis:ztThemis:0.0.10'
 }
+
+apply from: "shrink_r_class.gradle"

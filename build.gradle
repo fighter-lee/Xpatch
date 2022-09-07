@@ -10,6 +10,8 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.1"
+        classpath "com.bytedance.android.byteX:base-plugin:0.3.0"
+        classpath "com.bytedance.android.byteX:shrink-r-plugin:0.3.0"
     }
 }
 
